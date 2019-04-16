@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {connect} from "react-redux";
+
+import TodoList from "./components/TodoList";
+import TodoForm from "./components/TodoForm";
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-		Mounts
-      </div>
-    );
-  }
+function App(props) {
+	return (
+		<div className="App">
+			<TodoList />	
+			<TodoForm />
+		</div> 
+	);
 }
 
-export default App;
+export default connect()(App);
